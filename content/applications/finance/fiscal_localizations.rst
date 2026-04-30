@@ -168,6 +168,7 @@ Fiscal localization modules are available for the countries listed below.
    fiscal_localizations/germany
    fiscal_localizations/guatemala
    fiscal_localizations/hong_kong
+   fiscal_localizations/hungary
    fiscal_localizations/india
    fiscal_localizations/indonesia
    fiscal_localizations/italy
