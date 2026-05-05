@@ -211,54 +211,61 @@ Create a shift
 To create a shift, go to any schedule, then click :guilabel:`New`. In the pop-up window that opens,
 fill in the following details:
 
-- **Templates**: If there is one or more templates existing in your database, they are
+- **Templates**: If there is one or more templates existing in the database, they are
   displayed in the upper section of the pop-up window. Once selected, a template prefills the
   shift form accordingly.
-- :guilabel:`Resource`: Resources can be both employees or materials. If this field is left empty,
+- :guilabel:`Resources`: Resources can be both employees or materials. If this field is left empty,
   the shift is considered an :ref:`open shift <planning/open-shifts>`.
-- :guilabel:`Role`: Select the role that the resource assigned will be performing. This field is
-  used when :ref:`auto-planning <planning/open-shifts>` shifts. Once you select a role, the shift
-  templates associated with it are displayed in the upper section of the pop-up window.
-- :guilabel:`Project`: If the Project app is installed in your database, this field allows you to
-  link the project to the shift is available, allowing you to plan and track shifts dedicated to
-  work on the selected project.
-- :guilabel:`Sales Order Item`: If the Sales app is installed in your database, this field allows
-  you to link a sales order to the shift.
+- :guilabel:`Date`: Choose the date and time of the shift. This is the only mandatory field when
+  creating a shift.
 - :guilabel:`Repeat`: Click the :icon:`fa-repeat` :guilabel:`(repeat)` button and configure the
-  :guilabel:`Repeat every` fields according to your needs. The following rules apply to recurring
-  shifts:
+  :guilabel:`Repeat every` fields as needed. The following rules apply to recurring shifts:
 
   - All fields (e.g., :guilabel:`Resource`, :guilabel:`Role`, :guilabel:`Project`) are copied from
-    the original shift except for the date, which is adjusted according to the
-    :guilabel:`Repeat Every` field.
+    the original shift except for the date, which is adjusted according to the :guilabel:`Repeat
+    Every` field.
   - Recurrences are planned but not published.
   - By default, planned shifts are created six months in advance, after which they are created
-    gradually. To change the time frame, :ref:`activate the Developer mode <developer-mode>`, then
-    go to :menuselection:`Planning --> Configuration --> Settings` and edit the
-    :guilabel:`Recurring Shifts`.
+    gradually. To change the time frame, :ref:`activate the developer mode <developer-mode>`, then
+    go to :menuselection:`Planning --> Configuration --> Settings` and edit the :guilabel:`Recurring
+    Shifts`.
 
-- :guilabel:`Additional note sent to the employee`: Click on the field to add a note.
-- :guilabel:`Date`: Choose the date and time of your shift. This is the only mandatory field when
-  creating a shift.
-- :guilabel:`Allocated time`: Is calculated based on the date and the employee’s :guilabel:`Working
-  Schedule`. See more in :ref:`Shift Templates <planning/templates>`.
+- :guilabel:`Allocated time`: Is calculated based on the date and the employee's :guilabel:`Working
+  Schedule`.
+- :guilabel:`Role`: Select the role that the resources assigned will be performing. This field is
+  used when :ref:`auto-planning <planning/open-shifts>` shifts. Once you select a role, the shift
+  templates associated with it are displayed in the upper section of the pop-up window.
 
-Click :guilabel:`Publish & Save` to confirm the shift and send the assigned employee their schedule
-by email.
+Additionally, the following fields may also be available:
+
+- :guilabel:`Project`: If the :guilabel:`Project planning` setting is enabled, select the relevant
+  project to link to the shift. Shifts dedicated to the selected project are then planned and
+  tracked accordingly.
+- :guilabel:`Task`: If a project is selected, optionally select a task within that project.
+- :guilabel:`Sales Order`: If the Sales app is installed, select the relevant sales order to link to
+  the shift.
+- :guilabel:`Customer`: If the :doc:`Field Service <planning/field_service>` setting is enabled and
+  the shift is an onsite intervention, select the relevant customer to link to the shift.
+- :guilabel:`Worksheet`: If :ref:`field service worksheets <planning/field-service/worksheets>` are
+  configured, optionally select the relevant :ref:`worksheet template
+  <planning/field-service/worksheet-templates>`.
+
+Click :guilabel:`Save` to confirm the shift, or :guilabel:`Publish` to confirm it and notify the
+assigned employee by email.
 
 .. note::
-   The draft is visible on the admin planning view and can be identified by diagonal lines. The
-   employee is only notified of the shift once it's published.
-
-   Two kinds of notifications are sent to the employees depending on their account configuration:
+   Unpublished shifts are only visible on schedules for users with :guilabel:`Administrator`
+   Planning :doc:`access rights </applications/general/users/access_rights>` and are identified by
+   diagonal lines. The employee is notified of the shift only once it is published:
 
    - Employees without user accounts are redirected to a dedicated **Planning portal**.
    - Employees with a user account are redirected to the :guilabel:`My Planning` view in the
-     backend view of Odoo.
+     backend.
 
 .. tip::
-   The **split shifts** tool allows to easily split a long shift into segments. To do so, hover the
-   mouse over the desired shift and click the :icon:`fa-scissors` (:guilabel:`scissors`) icon.
+   The **Split shifts** tool allows a long shift to be split into segments. To do so, hover over
+   the desired shift between two day columns and click the :icon:`fa-scissors`
+   (:guilabel:`scissors`) icon.
 
    .. image:: planning/split-shifts.png
       :alt: Split shifts tool.
@@ -336,3 +343,8 @@ shift reverts to an open shift.
 
    - Only the shifts matching the employee's roles are displayed in their schedule.
    - Unassigning shifts is not available for shifts in the past.
+
+.. toctree::
+   :titlesonly:
+
+   planning/field_service
