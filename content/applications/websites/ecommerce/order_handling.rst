@@ -9,9 +9,9 @@ orders upon order confirmation, delivery orders to manage :doc:`picking
 </applications/inventory_and_mrp/inventory/shipping_receiving/picking_methods>`,
 :doc:`packing
 </applications/inventory_and_mrp/inventory/shipping_receiving/setup_configuration/multipack>`, and
-:doc:`shipping <shipping>`, and invoices. Odoo eCommerce also offers additional tools to send
-:ref:`abandoned cart emails <ecommerce/handling/abandoned_cart>`, ensure :ref:`stock availability
-<ecommerce/handling/stock-management>`, and handle product :ref:`returns and refunds
+:doc:`shipping <shipping>`, and invoices. Odoo eCommerce also offers additional tools for sending
+:ref:`abandoned cart emails <ecommerce/handling/abandoned_cart>`, ensuring :ref:`stock availability
+<ecommerce/handling/stock-management>`, and handling product :ref:`returns and refunds
 <ecommerce/handling/returns>`.
 
 .. _ecommerce/handling/sales:
@@ -20,15 +20,37 @@ Sale
 ====
 
 To view all quotations and orders, navigate to :menuselection:`Website --> eCommerce -->
-Orders`, and select one to open it. The status bar at the top of the order shows its current status:
+Orders`. At the top of the :guilabel:`Orders` page, an overview of all orders is displayed, filtered
+by:
+
+- :guilabel:`To Fulfill`: confirmed and paid orders (i.e., :ref:`sales orders
+  <ecommerce/handling/sales/sales-order>`)
+- :guilabel:`To Confirm`: unpaid and unconfirmed orders (i.e., :ref:`sent but unconfirmed quotations
+  <ecommerce/handling/sales/quotation-sent>`)
+- :guilabel:`To Invoice`: confirmed orders that are ready for invoicing but have not necessarily
+  been fulfilled (i.e., :ref:`sales orders <ecommerce/handling/sales/sales-order>`)
+
+.. image:: order_handling/order-status-buttons.png
+   :alt: Orders overview.
+
+Select a specific order from the orders list to view its details and order status. The bar at the
+top of the order shows its current status:
+
+  .. _ecommerce/handling/sales/quotation:
 
 - :guilabel:`Quotation`: A product has been :ref:`added to the cart
   <ecommerce/checkout/add-to-cart>`, but the customer has not yet completed the :ref:`checkout
   process <ecommerce/checkout/steps>`. If the customer is not logged in, the quotation is assigned
   to the default *Public User* contact.
+
+  .. _ecommerce/handling/sales/quotation-sent:
+
 - :guilabel:`Quotation Sent`: The customer has completed the :ref:`checkout process
   <ecommerce/checkout/steps>` and confirmed the order, but the :ref:`payment
   <ecommerce/checkout/payment>` has not yet been confirmed.
+
+  .. _ecommerce/handling/sales/sales-order:
+
 - :guilabel:`Sales Order`: The customer has completed the :ref:`checkout process
   <ecommerce/checkout/steps>`, confirmed the order, and the :ref:`payment
   <ecommerce/checkout/payment>` has been successfully received.
@@ -36,9 +58,13 @@ Orders`, and select one to open it. The status bar at the top of the order shows
 .. tip::
    - The :guilabel:`Confirmed` filter is enabled by default in the :guilabel:`Orders` list. To
      view *all* quotations and orders, remove the filter.
-   - To view only orders in the :guilabel:`Quotation Sent` stage, go to :menuselection:`Website -->
-     eCommerce --> Orders` and remove the :guilabel:`Confirmed` filter. Then, open the
-     :icon:`fa-caret-down` dropdown menu and, under :guilabel:`Filters`, select :guilabel:`Unpaid`.
+   - To view only orders with the :guilabel:`Quotation Sent` status, click the :guilabel:`To
+     Confirm` button or go to :menuselection:`Website --> eCommerce --> Orders` and remove the
+     :guilabel:`Confirmed` filter. Then, open the :icon:`fa-caret-down` dropdown menu and, under
+     :guilabel:`Filters`, select :guilabel:`Unpaid`.
+   - Reporting data, such as the number of :guilabel:`Visitors`, :guilabel:`Orders` and
+     the :guilabel:`Sales` amount of a given period, is displayed on the left side of the
+     :guilabel:`Orders` page.
    - E-commerce orders can be automatically assigned to a specific sales team or salesperson. To do
      so, go to :menuselection:`Website --> Configuration --> Settings`. In the :guilabel:`eCommerce`
      section, under :guilabel:`Orders Assignment`, select the relevant :guilabel:`Sales Team` or
@@ -185,15 +211,15 @@ To automate invoicing:
 #. Go to :menuselection:`Website --> Configuration --> Settings`.
 #. In the :guilabel:`eCommerce` section, enable :guilabel:`Automatic Invoice`.
 #. Select the relevant :guilabel:`Email Template`, then click :guilabel:`Save`.
-#. If needed, click the :icon:`fa-arrow-right` icon next to the template name to customize the
-   :doc:`email template </applications/general/companies/email_template>`.
+#. If needed, click the :icon:`fa-arrow-right` (:guilabel:`Internal link`) icon next to the template
+   name to customize the :doc:`email template </applications/general/companies/email_template>`.
 
 .. note::
    - Customers can view their invoices under :guilabel:`Your Invoices` in the :doc:`portal
      </applications/general/users/user_portals>`.
    - Invoices are only sent automatically if (and when) the :doc:`payment
      </applications/finance/payment_providers>` is registered.
-   - When automatic invoicing is disabled and invoices are created manually, they appear as
+   - When automatic invoicing is disabled, and invoices are created manually, they appear as
      :doc:`pro-forma invoices </applications/sales/sales/invoicing/proforma>` in the customer
      portal until they are manually :ref:`sent to the customer <accounting/invoice/sending>`.
 
