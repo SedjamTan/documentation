@@ -2,51 +2,103 @@
 Batch payments
 ==============
 
-Batch payments allow grouping payments from multiple customers or vendors into a single batch and
-generating a detailed deposit slip or payment file with a batch reference. This reference can be
-used during :doc:`reconciliation <../bank/reconciliation>` to match bank transactions with the
-corresponding payments. This feature is particularly useful for submitting :doc:`SEPA Direct Debit
-payments <batch_sdd>`, depositing cash payments or :doc:`checks <checks>`, or generating outgoing
-payment files, such as :doc:`SEPA <pay_sepa>` or :ref:`NACHA <l10n_us/nacha>`.
+Batch payments act as an organizational tool that groups multiple individual customer or vendor
+payments into a single file. Rather than managing transactions one by one, you can consolidate them
+to generate a detailed deposit slip or a single electronic payment file. This significantly
+simplifies bank :doc:`reconciliation <../bank/reconciliation>`: when a bulk sum appears on your bank
+statement, Odoo uses the batch reference to automatically match and reconcile all underlying
+payments in a single step.
+
+For customer payments, the feature supports both physical assets, such :doc:`checks <checks>` and
+cash, and electronic transfers. You can group daily receipts into one batch to print a bank deposit
+slip, ensuring your internal records mirror the lump-sum deposit on your bank statement. On the
+vendor side, batch payments streamline bulk electronic transfers. Instead of processing supplier
+invoices manually, you can select multiple bills and generate a single outgoing payment file to
+upload directly to your banking portal. Because these file formats are region-specific (e.g.,
+:doc:`SEPA <sepa_payments>` in Europe, :ref:`NACHA <l10n_us/nacha>` in the U.S., or the global
+:ref:`ISO 20022 <accounting/sepa_payments/iso20022>` standard), you should consult your country's
+:doc:`fiscal localization <../../fiscal_localizations>` documentation to verify supported formats.
+
+.. seealso::
+   - :doc:`../payments`
+
+.. _accounting/batch/configuration:
 
 Configuration
 =============
 
-To enable batch payments, go to :menuselection:`Accounting --> Configuration --> Settings`, scroll
-down to the :guilabel:`Customer Payments` section, and enable :guilabel:`Batch Payments`.
+To enable batch payments, open the **Accounting** app, go to :menuselection:`Configuration -->
+Settings`, scroll down to the :guilabel:`Customer Payments` section, and enable :guilabel:`Batch
+Payments`.
+
+.. note::
+   This enables both customer *and* vendor batch payments.
+
+.. tip::
+   According to your needs, check that the following apps are installed in the **Apps** app:
+
+   - Batch Payment
+   - Account Batch Payment Reconciliation
+   - SEPA Credit Transfer
+   - SEPA Direct Debit
+   - SEPA Payments for Payroll
+   - Payment Provider: Sepa Direct Debit
+   - NACHA Payments
 
 .. _accounting/batch/creation:
 
 Batch creation
 ==============
 
-To create a batch payment, follow these steps:
+To create customer or vendor batch payments, reproduce the following steps:
 
 #. Make sure all payments to be included in the batch have been :ref:`registered
    <accounting/payments/from-invoice-bill>`.
-#. Go to :menuselection:`Accounting --> Customers --> Payments`.
-#. Select the payments to include in the batch.
+#. Open the **Accounting** app and go to :menuselection:`Customers --> Batch Payments` or
+   :menuselection:`Vendors --> Batch payments` according to the nature of the payment.
+#. Click :guilabel:`New`. From here, some configuration is required:
 
-   .. note::
-      All payments in the batch must use the same payment method. If needed, payments can be grouped
-      using the :guilabel:`Payment Method Line`.
+   - :guilabel:`Batch Type`: select whether the money is being transferred to your account
+     (:guilabel:`Inbound`) or to somebody else's account (:guilabel:`Outbound`).
+   - :guilabel:`Bank`: the bank journal to use for this batch.
+   - :guilabel:`Payment Method`: the payment method used for the invoices' payments. Only payments
+     matching the payment method selected will appear.
+   - :guilabel:`Date`: the batch's creation date
+   - :guilabel:`Reference`: the reference of the batch. Leave it empty to generate it automatically.
+   - :guilabel:`Add a line`: click it to select the payments to include in the batch.
+#. Once all desired payments are included, click :guilabel:`Validate` to finalize the batch.
 
-#. Click :guilabel:`Create batch` or click :icon:`fa-cog` :guilabel:`Actions` and select
+Alternatively, you can:
+
+#. Make sure all payments to be included in the batch have been :ref:`registered
+   <accounting/payments/from-invoice-bill>`.
+#. Open the **Accounting** app and go to :menuselection:`Customers --> Payments` or
+   :menuselection:`Vendors --> Payments` and select all payments to include in the batch.
+#. Click :guilabel:`Create Batch`, *or* :icon:`fa-cog` :guilabel:`(Actions)`, and select
    :guilabel:`Create batch payment`.
-#. In the batch payment form, review the selected payments. If any individual payments were missed,
-   click :guilabel:`Add a line` and select the missing payments to be included in the batch.
-#. Once all relevant payments are included, click :guilabel:`Validate` to finalize the batch.
+#. In the view form, review the selected payments. If any individual payments are missing, click
+   :guilabel:`Add a line`, then select the missing payments to include in the batch.
+#. Once all desired payments are included, click :guilabel:`Validate` to finalize the batch.
+
+To view existing batch payments, go to :menuselection:`Customers --> Batch Payments` or
+:menuselection:`Vendors --> Batch Payments`.
 
 .. note::
-   Once validated, no additional payments can be added to a batch.
+   - All payments in a batch *must* use the same payment method.
+   - Once validated, no additional payments can be added to a batch. You can delete the batch if
+     necessary by clicking :icon:`fa-cog` :guilabel:`(Actions)` and then :icon:`fa-trash-o`
+     :guilabel:`(Delete)`.
 
 .. tip::
    - Click :guilabel:`Print` to download a list of the included payments.
-   - To view existing batch payments, go to :menuselection:`Accounting --> Customers --> Batch
-     Payments`.
+   - To filter payments by payment method, click on the :guilabel:`Payment Method` column header
+     during the batch payment creation step.
+
+
+.. _accounting/batch/bank_reconciliation:
 
 Bank reconciliation
--------------------
+===================
 
 Once the bank transactions :doc:`have been created <../bank/transactions>` in your database, you can
 :ref:`reconcile them with the batch payment <reconciliation/batch-payments>`.
@@ -55,10 +107,6 @@ Once the bank transactions :doc:`have been created <../bank/transactions>` in yo
    :alt: Reconciling the batch payment with all its transactions
 
 .. note::
-   If a specific payment could not be processed by the bank or is missing, remove the related line
-   from the resulting entry section of the reconciliation view using the :icon:`fa-trash`
-   (:guilabel:`delete`) button before validating the reconciliation.
-
-.. seealso::
-   - :doc:`../payments`
-   - :doc:`batch_sdd`
+   If a specific payment could not be processed by the bank or is missing, remove the line
+   corresponding to that payment by using the :icon:`fa-trash-o` (:guilabel:`Delete`) button before
+   validating the reconciliation of the batch payment.

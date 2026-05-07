@@ -1,18 +1,32 @@
-=============================
-Trusted accounts (send money)
-=============================
+=================================
+Customer and vendor bank accounts
+=================================
 
-To protect users from sending money to scammers, vendor bank account numbers must be marked as
-trusted before you can use them to make an outgoing payment.
+Odoo stores your :doc:`contacts' <../../../essentials/contacts>` banking details on their profile,
+automatically filling out banking-related fields for all Odoo operations related to these contacts.
+By default, it also protects you from :ref:`phishing scams
+<accounting/customer-vendor-bank-accounts/phishing>` by preventing any outgoing wire transfer until
+the contact's bank account is marked as 'trusted'.
 
-To do so, open the vendor bank account and click on the :guilabel:`Send Money` toggle switch button.
+.. seealso::
+   - :doc:`sepa_payments`
 
-.. image:: trusted_accounts/send-money-toggle.png
-   :align: center
-   :alt: Example of a vendor bank account with the "Send Money" toggle button switched to "trusted."
+.. _accounting/customer-vendor-bank-accounts/configuration:
+
+Configuration
+=============
+
+To link a bank account to a contact, open an Odoo app with access to contacts (e.g., **Accounting**
+or **Contacts** app), choose a contact, then go to the :guilabel:`Accounting` tab. In
+:guilabel:`Bank Accounts`, click :guilabel:`Add a line` and fill in :guilabel:`Account Number`,
+:guilabel:`Bank`, :guilabel:`Account Holder Name`, :guilabel:`Account Holder`, and, if needed,
+:guilabel:`Company` and :guilabel:`Currency`. Toggle :guilabel:`Send Money` to mark the account as
+'trusted'.
 
 .. note::
-   All accounts are initially marked as untrusted.
+   By default, all accounts start as 'untrusted'.
+
+.. _accounting/customer-vendor-bank-accounts/phishing:
 
 Phishing attacks
 ================
