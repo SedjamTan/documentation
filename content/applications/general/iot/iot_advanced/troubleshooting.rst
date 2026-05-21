@@ -95,7 +95,7 @@ Errors
 ------
 
 A specific error code is displayed on the IoT system's homepage if any issues occur during the
-generation or reception of the ref:`HTTPS certificate <iot/connect/https_certificate>`.
+generation or reception of the :ref:`HTTPS certificate <iot/connect/https_certificate>`.
 
 .. tip::
    When you access the IoT system's homepage, it automatically checks for an HTTPS certificate and
@@ -111,7 +111,7 @@ the IoT system.
 `ERR_IOT_HTTPS_CHECK_CERT_READ_EXCEPTION`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-An error occurred while attempting to read the existing ref:`HTTPS certificate
+An error occurred while attempting to read the existing :ref:`HTTPS certificate <iot/connect/https_certificate>`.
 <iot/connect/https_certificate>`.
 Verify that the HTTPS certificate file is readable.
 
@@ -166,7 +166,7 @@ To solve this issue:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The IoT system successfully connected to `<https://www.odoo.com>`_, but the server refused to
-provide the ref:`HTTPS certificate <iot/connect/https_certificate>`.
+provide the :ref:`HTTPS certificate <iot/connect/https_certificate>`.
 
 Check that the IoT system and database meet the :ref:`eligibility requirements
 <iot/https_certificate_iot/iot-eligibility>` for an HTTPS certificate.

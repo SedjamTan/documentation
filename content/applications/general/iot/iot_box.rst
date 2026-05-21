@@ -96,26 +96,22 @@ help with troubleshooting when no display is connected. The LEDs can be interpre
 IoT box homepage
 ================
 
-To access the IoT box's homepage, open a web browser **on the same network as the IoT box** and
-navigate to the IoT box's IP address.
+To access the IoT box's homepage, **while on the same network as the IoT box** click on the "Homepage" button in the IoT App or open a web browser and
+navigate to the IoT box's IP address
 
 .. image:: iot_box/iot-homepage.png
    :scale: 75%
    :alt: IoT box's homepage
 
 The IoT box's IP address can be retrieved by:
-
-- connecting the IoT box to an :doc:`external monitor <devices/screen>`: the IP address is displayed
-  on the screen.
-
-  .. image:: iot_box/iot-status-display.png
-     :scale: 75%
-     :alt: Status display with IoT box's IP address
-
-- connecting the IoT box to a `supported receipt or label printer <https://www.odoo.com/app/iot-hardware>`_
-  with a USB cable: the IP address is automatically printed.
-- accessing the administrator interface of the router to which the IoT box is connected or using
-  third-party software to scan the network.
+- connecting to the same network as the IoT box and navigating to `http://iotbox.local` in a web browser: you will beautomatically redirected to the IoT box's homepage where you will find its ip address.
+- connecting the IoT box to a `supported receipt or label printer <https://www.odoo.com/app/iot-hardware>`_ with a USB cable: the IP address is automatically printed.
+- connecting the IoT box to an :doc:`external monitor <devices/screen>`: the IP address is displayed on the screen.
+   .. image:: iot_box/iot-status-display.png
+      :scale: 75%
+      :alt: Status display with IoT box's IP address
+- on IoT Box images `L2026.05.25` and later, the IoT Box ip address will be shown as a discovered Bluetooth device for 5 minutes after the boot
+- accessing the administrator interface of the router to which the IoT box is connected or using third-party software to scan the network.
 
 .. tip::
    If the IoT box is connected to an :doc:`external monitor <devices/screen>` or a :doc:`printer
