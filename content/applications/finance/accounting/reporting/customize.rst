@@ -63,6 +63,8 @@ displayed in the variant selector in the top right corner of the view.
       :align: center
       :alt: Report variant selection.
 
+.. _customize-reports/lines:
+
 Lines
 =====
 
@@ -74,6 +76,8 @@ clicking on it. All lines *require* a :guilabel:`Name`, and can have an optional
 .. image:: customize/engine-lines-options.png
    :align: center
    :alt: Engine lines options.
+
+.. _customize-reports/expressions:
 
 Expressions
 ===========
@@ -90,6 +94,8 @@ expressions using different computation engines under the same line if you need 
 
 .. note::
    Depending on the engine, :guilabel:`subformulas` may also be required.
+
+.. _customize-reports/domain-engine:
 
 'Odoo Domain' engine
 --------------------
@@ -123,6 +129,8 @@ result.
    :align: center
    :alt: Expression line within a line report
 
+.. _customize-reports/tax-engine:
+
 'Tax Tags' engine
 -----------------
 
@@ -136,6 +144,8 @@ the move lines with** `+` **tag)** `-` **(amount of the move lines with** `-` **
    If the formula is `tag_name`, the engine matches tax tags `+tag_name` and `-tag_name`, creating
    them if necessary. To exemplify further: two tags are matched by the formula. If the formula
    is `A`, it will require (and create, if needed) tags `+A` and `-A`.
+
+.. _customize-reports/formulas-engine:
 
 'Aggregate Other Formulas' engine
 ---------------------------------
@@ -174,6 +184,8 @@ expression's **label** (ex. **code.label**).
 that currency.
 
 You can also use the `cross_report` subformula to match an expression found in another report.
+
+.. _customize-reports/prefix-engine:
 
 'Prefix of Account Codes' engine
 --------------------------------
@@ -255,6 +267,7 @@ Prefix exclusion also works with tags.
    | This formula matches accounts with the tag *my_module.my_tag* and a code not starting with
      `10`.
 
+.. _customize-reports/external-engine:
 
 'External Value' engine
 -----------------------
@@ -290,6 +303,8 @@ Both subformulas can be mixed by separating them with a `;`.
    | `editable;rounding=2`
    | is a correct subformula mixing both behaviors.
 
+.. _customize-reports/python-engine:
+
 'Custom Python Function' engine
 -------------------------------
 
@@ -297,6 +312,8 @@ This engine is a means for developers to introduce custom computation of express
 case-by-case basis. The formula is the name of a **python function** to call, and the subformula is
 a **key** to fetch in the **dictionary** returned by this function. Use it only if you are making a
 custom module of your own.
+
+.. _customize-reports/columns:
 
 Columns
 =======
@@ -313,3 +330,114 @@ use different **expression** labels.
 
 When using the **period comparison** feature found under the :guilabel:`Options` tab of an
 accounting report, all columns are repeated in and for each period.
+
+.. _customize-reports/tax-reports:
+
+Tax report
+==========
+
+Report configuration
+--------------------
+
+.. tip::
+   All technical terms and functions of Odoo's reports engine are explained in the previous sections
+   of this page.
+
+To create a custom **tax report**, open the **Accounting** app and navigate to
+:menuselection:`Configuration --> Accounting Reports`, then click :guilabel:`New`. Enter a **name**
+for your report, select a :ref:`Root Report <customize-reports/root>`, pick :guilabel:`Country
+Matches` from the :guilabel:`Availabity` dropdown menu, and then select the country matching your
+company from the :guilabel:`Country` dropdown menu.
+
+Click :guilabel:`Add a line` to create a parent line. Once created, click on that parent line. From
+the new view form, click :guilabel:`Add a line` again to create a child line (or
+:ref:`Expression <customize-reports/expressions>`), and enter a name for that expression. In the
+:guilabel:`Definition`, select a :guilabel:`Computation Engine` for that expression depending on the
+following scenarios:
+
+.. tabs::
+
+   .. tab:: Scenario A (Tax grids)
+
+      In this scenario, your company *uses* tax grids:
+
+      - Select :guilabel:`Tax Tags` as the computation engine. Odoo uses this field to link the
+        report line to your taxes.
+      - In the :guilabel:`Formula` field, type your short grid identifier (e.g., `vat_sales_base`).
+        Odoo automatically generates the `+` and `-` variants of this tag for you to map inside
+        :menuselection:`Configuration --> Taxes`.
+      - In the :guilabel:`Subformula` field, enter either `base` to report the untaxed amount, or
+        `tax` to report the actual tax amount collected/paid.
+
+      Repeat this process as necessary. Then, :guilabel:`Save & Close`. Alternatively, you can:
+
+      - Select :guilabel:`Aggregate Other Formulas` as the computation engine. Odoo uses this field
+        to perform math on lines *already present* in the report rather than scanning raw
+        transactions.
+      - In the :guilabel:`Formula` field, use basic algebra referencing your line codes (e.g.,
+        `LINE_10 - LINE_20`).
+
+      Repeat this process as necessary. Then, :guilabel:`Save & Close`.
+
+   .. tab:: Scenario B (No tax grids)
+
+      In this scenario, your company *does not* use tax grids. Instead, it tracks everything
+      strictly via General Ledger accounts:
+
+      - Select :guilabel:`Prefix of Account Codes` as the computation engine: Odoo uses this for
+        lines that need to pull financial totals. Instead of looking for transaction tags, Odoo
+        pulls live balances directly from your Chart of Accounts.
+      - In the :guilabel:`Formula` field, type the starting digits of the accounts you want to
+        track, (e.g., `40` will pull the combined total of all revenue accounts starting with
+        `400000`, `401000`, etc.).
+
+      Repeat this process as necessary. Then, :guilabel:`Save & Close`. Alternatively, you can:
+
+      - Select :guilabel:`Aggregate Other Formulas` as the computation engine. Odoo uses this to
+        calculate subtotals, net tax, or grand totals by adding or subtracting your other report
+        lines.
+      - In the :guilabel:`Formula` field, use basic algebra referencing your line codes (e.g.,
+        `LINE_10 - LINE_20`).
+
+      Repeat this process as necessary. Then, :guilabel:`Save & Close`.
+
+In the :guilabel:`Options` of an **Expression**, populate the :guilabel:`Carry Over To` field with
+
+... (ask DOAL for the values to input for Carry Over To + Persistent checkbox + add ref to tax carry
+over documentation).
+
+Tax configuration
+-----------------
+
+Next, go to :menuselection:`Configuration --> Taxes` and click :guilabel:`New` to create and
+:ref:`configure new taxes <taxes/configuration>` for your custom tax report. Create your **Sales**
+and **Purchases** taxes, and populate the :guilabel:`Tax Grids` for all taxes using the matching tax
+grids you created earlier. Finally, ensure to :ref:`specify both a tax payable and tax receivable
+account <customize-reports/tax-reports/closing-entry>` for each tax.
+
+.. example::
+
+   .. image:: customize/engine-custom-taxes.png
+
+.. _customize-reports/tax-reports/closing-entry:
+
+Closing entry
+-------------
+
+.. seealso::
+
+   :ref:`Tax closing <tax-returns/close>`
+
+To close taxes, a :ref:`tax group <taxes/computation/group-of-taxes>` must be specified on each tax
+used in your custom tax report. To do this, navigate to :menuselection:`Configuration --> Taxes`,
+open a tax that requires a tax group, click the :guilabel:`Advanced Options`, and select a group in
+the :guilabel:`Tax Group` field. Once assigned, click the :icon:`fa-arrow-right` :guilabel:`(right
+arrow)` icon and set both a :guilabel:`Tax Payable Account` and :guilabel:`Tax Receivable Account`.
+
+.. tip::
+   - When everything has been set up, make sure to test your report by creating invoices, bills, and
+     credit notes using the taxes specific to that report. Finally, test the closing entry itself.
+   - If you do not wish to display a specific account in the tax closing entry, go to
+     :menuselection:`Configuration --> Taxes`, select the desired tax, and click
+     :icon:`oi-settings-adjust` :guilabel:`(settings adjust)` icon. Then, check the :guilabel:`Tax
+     Closing Entry` box.
