@@ -96,3 +96,24 @@ reporting period.
      <https://tms.taxoman.gov.om/portal/web/taxportal/home>`_.
    - `VAT Taxpayer Guide
      <https://tms.taxoman.gov.om/portal/documents/20126/1414820/VAT+Taxpayer+Guide+-+VAT+Return+Filing.pdf/fae31d0c-e7e7-0014-9f28-a4c506b36614?t=1733169613409>`_.
+
+Invoicing language
+==================
+
+Invoices can be issued in different languages according to your customer or business needs. You can
+manage this using two methods:
+
+- Per-customer language: Set a preferred langauge for individual customers. For example, if a
+  customer's language is set to Turkish, all documents sent to them are automatically generated in
+  Turkish. To configure this, open the customer's :doc:`contact form <../../essentials/contacts>`
+  and set the :guilabel:`Language` field to the desired language.
+
+- Bilingual Arabic invoices: Add Arabic as a secondary language to your company's billing documents.
+  When enabled, all invoices, credit/debit notes, vendor bills, and refund bills will feature both
+  your company's primary language and an Arabic translation. To configure this, open the
+  **Accounting** app, go to :menuselection:`Configuration --> Settings`, and enable :guilabel:`Gulf
+  Cooperation Council Format` in the :guilabel:`Customer Invoices` section.
+
+.. tip::
+   To test these features, create and confirm an invoice. Then, click :guilabel:`Preview` on that
+   invoice to see exactly what the document will look like for your customer or vendor.
