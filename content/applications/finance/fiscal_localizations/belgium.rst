@@ -35,6 +35,10 @@ it in, click :guilabel:`Save`, and then :guilabel:`Setup` to configure it furthe
 Taxes
 =====
 
+.. important::
+   When submitting your tax returns, ensure to use XML or VAT format files. These are the only
+   formats accepted by the Belgian tax authorities.
+
 Default Belgian taxes are created automatically when the :guilabel:`Belgium - Accounting` and
 the :guilabel:`Belgium - Accounting Reports` modules are installed. Each tax impacts the Belgian
 :guilabel:`Tax Report`, available by going to :menuselection:`Accounting --> Reporting -->
@@ -79,9 +83,15 @@ the tax amount and allocates it to the corresponding accounts based on the tax r
    .. image:: belgium/deductible-tax.png
       :alt: Example of not-fully deductible tax
 
+Fleet tax deduction
+~~~~~~~~~~~~~~~~~~~
+
+.. note::
+   The module **Belgium - Disallowed Expenses Fleet** must be installed for advanced tax calculations.
+
 .. seealso::
-  - :doc:`Taxes <../accounting/taxes>`
-  - :doc:`../accounting/reporting/tax_returns`
+   - :doc:`Taxes <../accounting/taxes>`
+   - :doc:`../accounting/reporting/tax_returns`
 
 .. _belgium/reports:
 
