@@ -4,6 +4,8 @@ Resellers
 
 Within Odoo's *CRM* app, leads can be forwarded to resellers (or partners). Leads can be manually
 assigned, or automatically assigned, based on the resellers' designated *level* and location.
+Reseller partners may also take assigned leads and convert them into opportunities in the user
+portal.
 
 Configuration
 =============
@@ -13,7 +15,6 @@ the :menuselection:`Apps application`, and remove the :guilabel:`Apps` filter fr
 :guilabel:`Search...` bar. Then, search for `Resellers`.
 
 .. image:: resellers/resellers-module.png
-   :align: center
    :alt: The resellers module in Odoo.
 
 Click :guilabel:`Activate` on the :guilabel:`Resellers` module card that appears. Doing so installs
@@ -81,7 +82,6 @@ To change the active status of an activation, slide the toggle in the :guilabel:
 the desired activation to the *inactive* position.
 
 .. figure:: resellers/activations-toggle.png
-   :align: center
    :alt: The list of default partner activations in the CRM app.
 
    The list of default Partner Activations in the CRM app. The toggle for First Contact is in the
@@ -126,5 +126,70 @@ slide the :guilabel:`Unpublished` toggle to the active, :guilabel:`Published` po
 Repeat these steps for all partners.
 
 .. image:: resellers/partners-webpage.png
-   :align: center
    :alt: An example of the partners webpage, displaying available partners by level and location.
+
+Partners and the user portal
+============================
+
+Reseller partners who have been assigned leads and opportunities can view them in their user
+portals.
+
+.. image:: resellers/lead-opportunity-buttons.png
+   :alt: An example of the partners' user portal and the lead and opportunity buttons.
+
+Clicking either the :guilabel:`Leads` or :guilabel:`Opportunities` button brings up a list of all
+leads or opportunities assigned to that partner. Individual leads and opportunities can be clicked
+for more details.
+
+Partner leads
+-------------
+
+Leads viewed through a partner's user portal contain the same information as the lead viewed through
+the **CRM** app. Reseller partners may click either the :guilabel:`I'm interested` or :guilabel:`I'm
+not interested` buttons. Clicking either button brings up the :guilabel:`Lead Feedback` form.
+
+.. image:: resellers/reseller-lead-page.png
+   :alt: The lead page as seen in a reseller's user portal.
+
+If the partner has expressed interest, the form prompts them to enter their next planned action and
+expected revenue for the lead and to confirm that they have contacted the customer. Entering this
+information and clicking the :guilabel:`Confirm` button converts the lead into an opportunity.
+Failing to fill out the form prevents the lead from being able to convert to an opportunity.
+
+.. image:: resellers/lead-feedback-popup.png
+   :alt: The Lead Feedback form brought up by clicking the "I'm interested" button.
+
+If the partner is not interested in the opportunity, the :guilabel:`Lead Feedback` form prompts the
+partner to enter why they're not interested in the lead, if they've contacted the customer, and if
+they think the lead is spam. This version of the :guilabel:`Lead Feedback` form does not need to be
+completed to be confirmed.
+
+.. image:: resellers/lead-feedback-popup-not-interested.png
+   :alt: The Lead Feedback form brought up by clicking the "I'm not interested" button.
+
+Partner opportunities
+---------------------
+
+Leads that have been accepted by the partner are converted into *opportunities*. Clicking into an
+opportunity reveals the same information as is displayed in the **CRM** app but in a view that's
+designed for the user portal. From an opportunity's page, the reseller may:
+
+* Change the opportunity's stage
+* Edit the opportunity's information, including priority, planned revenue, and pertinent dates
+* Update the contact information for the opportunity
+* Leave notes, messages, and more in the opportunity's chatter
+
+.. note::
+   The reseller's ability to actually change these settings depends on the access that has been
+   granted to them by a database administrator. See the ::doc:`access rights
+   <../../../general/users/access_rights>` documentation for more details.
+
+
+.. image:: resellers/reseller-opportunity-page.png
+   :alt: An opportunity's page as viewed within the user portal.
+
+
+
+.. seealso::
+   - :doc:`../../../general/users/portal`
+   - :doc:`../acquire_leads/convert`
