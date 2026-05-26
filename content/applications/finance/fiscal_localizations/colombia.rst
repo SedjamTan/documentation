@@ -185,18 +185,18 @@ Automatic DIAN Enablement
 
 Odoo automates the |DIAN| enablement process to become an electronic invoicer using the `DIAN Own Software
 <https://micrositios.dian.gov.co/sistema-de-facturacion-electronica/como-puedes-facturar-electronicamente/>`_ solution,
-sending the requested number of valid customer invoices, credit notes and debit notes to the DIAN
+sending the required number of valid customer invoices, credit notes, and debit notes to the DIAN
 certification environment.
 
-To start this process it is necessary to complete the steps of the :ref:`electronic invoicing main configurations
+To start this process, complete the :ref:`main configuration steps for electronic invoicing
 <localization/colombia/einvoice-configuration>`.
 
 .. tip::
-   Always run the enablement process in a **test database**. This will also serve as the environment
-   for continued electronic invoicing testing before going to production.
+   Always run the enablement process in a **test database** to serve as the environment for
+   continued electronic invoicing testing before going to production.
 
-To begin the process, go to :menuselection:`Accounting --> Configuration --> Settings` and complete the
-following steps:
+To begin the process, go to :menuselection:`Accounting --> Configuration --> Settings`, scroll to
+the :guilabel:`Colombian Electronic Invoicing` section, and complete the following steps:
 
 #. Enable the :guilabel:`Test Environment` checkbox.
 #. Enable the :guilabel:`Activate Certification Process` checkbox.
@@ -205,22 +205,23 @@ following steps:
 
 .. note::
    The exact number of documents required by the |DIAN| is shown in the portal when you register
-   your operation mode.
+   the operation mode.
 
 Odoo will automatically generate the necessary journals, products, and the required documents, which are
 submitted to the |DIAN|'s certification environment.
 
-When the process is complete, click :guilabel:`Open` to review the generated documents. You can check each
-document's validation status under its :guilabel:`DIAN` tab.
+When the process is complete, click :guilabel:`Open` to review the generated documents and check
+each document's validation status under its :guilabel:`DIAN` tab.
 
 .. important::
-   Confirm in the |DIAN| portal that the company status has changed to **Enabled** before
-   proceeding to production. 
-   - If this is the case, the process has been finished successfully.
-   - If the company has not been **Enabled**, the process can be repeated until successfully getting enabled.
+   Confirm that the company status has changed to :guilable:`Enabled` in the |DIAN| portal before
+   proceeding to production.
+   - If the status is :guilable:`Enabled`, the process has been completed successfully.
+   - If the company is not :guilable:`Enabled`, repeat the process until it is successfully enabled.
 
 .. seealso::
-   - For a demonstration of the process, review the following `video <https://www.youtube.com/watch?v=_0j9kqL9yOU>`_
+   - Watch this `video <https://www.youtube.com/watch?v=_0j9kqL9yOU>`_ for a demonstration of the
+   process.
 
 Master data
 -----------
