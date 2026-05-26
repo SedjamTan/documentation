@@ -201,7 +201,7 @@ the :guilabel:`Colombian Electronic Invoicing` section, and complete the followi
 #. Enable the :guilabel:`Test Environment` checkbox.
 #. Enable the :guilabel:`Activate Certification Process` checkbox.
 #. Enter the number of documents requested by the |DIAN| for each type of document
-#. Click :guilabel:`Start Enablement Process`.
+#. Click :guilabel:`Begin Certification Process`.
 
 .. note::
    The exact number of documents required by the |DIAN| is shown in the portal when you register
