@@ -41,7 +41,7 @@ msgstr ""
 "Project-Id-Version: Odoo 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-22 17:35+0000\n"
-"PO-Revision-Date: 2026-05-26 23:20+0000\n"
+"PO-Revision-Date: 2026-05-27 23:20+0000\n"
 "Last-Translator: \"Fernanda Alvarez (mfar)\" <mfar@odoo.com>\n"
 "Language-Team: Spanish (Latin America) <https://translate.odoo.com/projects/"
 "odoo-19-doc/finance/es_419/>\n"
@@ -6876,12 +6876,18 @@ msgid ""
 "relevant vendor bills, and click :guilabel:`Create Vendor Bill`. The "
 "corresponding vendor bill is then created."
 msgstr ""
+"Después, abre la aplicación Documentos, dirígete a la carpeta "
+"correspondiente, selecciona las facturas de proveedor relevantes y haz clic "
+"en :guilabel:`Crear factura de proveedor`. El sistema creará la factura de "
+"proveedor correspondiente."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:216
 msgid ""
 "It is also possible to send :ref:`self-bills <accounting/vendor_bills/self-"
 "billing>` via Peppol."
 msgstr ""
+"También puedes enviar :ref:`autofacturas <accounting/vendor_bills/self-"
+"billing>` mediante Peppol."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:221
 msgid "Add extra fields"
@@ -6890,6 +6896,7 @@ msgstr "Agregar campos adicionales"
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:224
 msgid "Adding fields requires the :doc:`Studio <../../../studio>` app."
 msgstr ""
+"Para agregar campos necesitas la aplicación :doc:`Studio <../../../studio>`."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:226
 msgid ""
@@ -6898,6 +6905,10 @@ msgid ""
 "by :ref:`adding extra fields <studio/fields/add>` to the invoice using "
 "Studio."
 msgstr ""
+"Odoo admite los campos de Peppol más comunes de forma predeterminada, pero "
+"puedes incluir otros datos de Peppol al enviar facturas electrónicas "
+"mediante Peppol si :ref:`agregas campos adicionales <studio/fields/add>` a "
+"la factura con Studio."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:230
 msgid "The table below shows:"
@@ -6912,18 +6923,24 @@ msgid ""
 ":guilabel:`Main invoice` section are added to the :ref:`form view <studio/"
 "views/general/form>` of the invoice"
 msgstr ""
+"La sección :guilabel:`Factura principal` se agrega a la :ref:`vista de "
+"formulario <studio/views/general/form>` de la factura"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:236
 msgid ""
 ":guilabel:`Invoice lines` section are added to the :ref:`list view <studio/"
 "views/multiple-records/list>` of the invoice line"
 msgstr ""
+"La sección :guilabel:`Líneas de la factura` se agrega a la :ref:`vista de "
+"lista <studio/views/multiple-records/list>` de la línea de la factura"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:239
 msgid ""
 "the data type, which *must* match the :ref:`field type <studio/fields/field-"
 "types>` when adding the field using Studio"
 msgstr ""
+"El tipo de dato, que *debe* coincidir con el :ref:`tipo de campo <studio/"
+"fields/field-types>` al agregar el campo con Studio"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:241
 msgid ""
@@ -6940,6 +6957,10 @@ msgid ""
 "it is crucial to use the exact text from the :guilabel:`Studio field label` "
 "column below."
 msgstr ""
+"Odoo usa la etiqueta de un nuevo campo para generar el nombre técnico del "
+"campo de forma automática. Para garantizar que el nombre técnico del campo "
+"tenga el formato correcto, es indispensable usar el texto exacto de la "
+"columna :guilabel:`Etiqueta del campo de Studio` que aparece a continuación."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:249
 msgid "Peppol technical name (XML)"
@@ -6969,7 +6990,7 @@ msgstr "Fecha"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:251
 msgid "`Peppol tax point date`"
-msgstr ""
+msgstr "`Fecha del punto fiscal de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:253
 msgid "ContractDocumentReference.ID"
@@ -6987,7 +7008,7 @@ msgstr "Texto"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:253
 msgid "`Peppol contract document reference ID`"
-msgstr ""
+msgstr "`ID de referencia del documento de contrato de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:255
 msgid "DespatchDocumentReference.ID"
@@ -6995,7 +7016,7 @@ msgstr "DespatchDocumentReference.ID"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:255
 msgid "`Peppol despatch document reference ID`"
-msgstr ""
+msgstr "`ID de referencia del documento de despacho de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:257
 msgid "AccountingCost"
@@ -7003,7 +7024,7 @@ msgstr "AccountingCost"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:257
 msgid "`Peppol accounting cost`"
-msgstr ""
+msgstr "`Costo contable de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:259
 msgid "ProjectReference.ID"
@@ -7011,7 +7032,7 @@ msgstr "ProjectReference.ID"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:259
 msgid "`Peppol project reference ID`"
-msgstr ""
+msgstr "`ID de referencia del proyecto de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:261
 msgid "InvoicePeriodStartDate"
@@ -7019,7 +7040,7 @@ msgstr "InvoicePeriodStartDate"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:261
 msgid "`Peppol Invoice period Start Date`"
-msgstr ""
+msgstr "`Fecha de inicio del periodo de factura de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:263
 msgid "InvoicePeriodEndDate"
@@ -7027,7 +7048,7 @@ msgstr "InvoicePeriodEndDate"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:263
 msgid "`Peppol Invoice period End Date`"
-msgstr ""
+msgstr "`Fecha de finalización del periodo de factura de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:265
 msgid "OrderReference.ID"
@@ -7035,7 +7056,7 @@ msgstr "OrderReference.ID"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:265
 msgid "`Peppol Order Reference ID`"
-msgstr ""
+msgstr "`ID de referencia de la orden de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:267
 msgid "**Invoice lines**"
@@ -7047,7 +7068,7 @@ msgstr "OrderLineReference/LineID"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:267
 msgid "`Peppol order line reference ID`"
-msgstr ""
+msgstr "`ID de referencia de la línea de la orden de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:269
 msgid "item.buyersItemIdentification"
@@ -7055,7 +7076,7 @@ msgstr "item.buyersItemIdentification"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:269
 msgid "`Peppol buyers item ID`"
-msgstr ""
+msgstr "`ID del artículo del comprador de Peppol`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:272
 msgid ""
@@ -7076,28 +7097,36 @@ msgid ""
 "(or :menuselection:`Invoicing --> Customers --> Invoices` for Invoicing "
 "users)."
 msgstr ""
+"Ve a :menuselection:`Contabilidad --> Clientes --> Facturas` (o a "
+":menuselection:`Facturación --> Clientes --> Facturas` si usas Facturación)."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:278
 msgid "Open an existing invoice, or click :guilabel:`New`."
-msgstr ""
+msgstr "Abre una factura existente o haz clic en :guilabel:`Nuevo`."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:279
 msgid ""
 "Open Studio by clicking the :icon:`oi-studio` (:guilabel:`Toggle Studio`) "
 "icon."
-msgstr ""
+msgstr "Abre Studio con el icono :icon:`oi-studio` (:guilabel:`Abrir Studio`)."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:280
 msgid ""
 "If adding a field to invoice line list view, click in the :guilabel:`Invoice "
 "Lines` tab and click :guilabel:`Edit List view`."
 msgstr ""
+"Si agregas un campo a la vista de lista de las líneas de la factura, haz "
+"clic en la pestaña :guilabel:`Líneas de la factura` y luego en "
+":guilabel:`Editar vista de lista`."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:282
 msgid ""
 "Click and drag a :guilabel:`Text` or :guilabel:`Date` field from the panel "
 "on the left to the desired location in the view on the right."
 msgstr ""
+"Haz clic y arrastra un campo de tipo :guilabel:`Texto` o :guilabel:`Fecha` "
+"desde el panel izquierdo hasta la ubicación deseada en la vista de la "
+"derecha."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:284
 msgid ""
@@ -7105,10 +7134,14 @@ msgid ""
 "field label` column in the table above, then click outside the field label "
 "to see the :guilabel:`Technical Name` update automatically."
 msgstr ""
+"Ingresa la :guilabel:`etiqueta` tal y como aparece en la columna "
+":guilabel:`Etiqueta del campo de Studio` de la tabla anterior. Después, haz "
+"clic fuera de la etiqueta del campo para que el :guilabel:`nombre técnico` "
+"se actualice de forma automática."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:287
 msgid "Click :guilabel:`Close` to save all changes."
-msgstr ""
+msgstr "Haz clic en :guilabel:`Cerrar` para guardar todos los cambios."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:290
 msgid ""
@@ -7117,12 +7150,18 @@ msgid ""
 "name is incorrect, :ref:`edit the technical name <studio/fields/properties-"
 "technical-name-change>`."
 msgstr ""
+"El :guilabel:`nombre técnico` en Odoo debe coincidir con el formato de "
+"`x_studio_peppol_tax_point_date`. Si cometes un error y el nombre técnico es "
+"incorrecto, :ref:`edítalo <studio/fields/properties-technical-name-change>`."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:295
 msgid ""
 "After a new field has been created as explained above, it can be :ref:`added "
 "to other views <studio/fields/add-existing>` such as the invoice list view."
 msgstr ""
+"Después de crear un nuevo campo como se explicó antes, puedes "
+":ref:`agregarlo a otras vistas <studio/fields/add-existing>`, como la vista "
+"de lista de facturas."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing.rst:301
 msgid "Peppol deregistration from Odoo"
@@ -8303,6 +8342,21 @@ msgid ""
 "Furthermore, e-invoicing through the e-Račun platform is mandatory for B2B "
 "transactions as of 1 January 2026."
 msgstr ""
+"En Croacia, las empresas deben cumplir con las regulaciones de facturación "
+"electrónica para garantizar que las transacciones sean seguras, auténticas y "
+"almacenables. El marco legal principal que regula la facturación electrónica "
+"en Croacia es la Ley de Fiscalización y sus requisitos relacionados con el "
+"aprovisionamiento público, alineados con la `Directiva 2014/55/UE de la "
+"Unión Europea <https://eur-lex.europa.eu/legal-content/EN/TXT/"
+"?uri=CELEX%3A32014L0055>`_ sobre facturación electrónica en "
+"aprovisionamiento público. Según estas regulaciones, todas las empresas "
+"involucradas en transacciones :abbr:`B2G (de empresa a gobierno)` deben usar "
+"facturas electrónicas a través del :abbr:`CIS (Sistema Central de Facturas)"
+"`, la plataforma oficial de Croacia para facturación electrónica del sector "
+"público. Croacia también forma parte de la red Peppol, que facilita la "
+"facturación electrónica transfronteriza estandarizada dentro de la Unión "
+"Europea. Además, desde el 1 de enero de 2026, la facturación electrónica "
+"mediante la plataforma e-Račun es obligatoria para las transacciones B2B."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing/croatia.rst:25
 msgid "Compliance with Croatian e-invoicing regulations"
@@ -8315,6 +8369,11 @@ msgid ""
 "moj-eracun.hr>`_. As an accredited provider, mojeRačun is designed to handle "
 "the differing technical requirements of the two parallel systems:"
 msgstr ""
+"**Integraciones**: Odoo puede enviar facturas y reportar pagos a la "
+"plataforma de e-Račun mediante una integración con el proveedor externo `moj-"
+"eRačun <https://moj-eracun.hr>`_. Como proveedor acreditado, mojeRačun está "
+"diseñado para gestionar los distintos requisitos técnicos de los dos "
+"sistemas paralelos:"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing/croatia.rst:35
 msgid ""
@@ -8349,6 +8408,15 @@ msgid ""
 "za državu* reached via Peppol, ensuring compliance with both Croatian and EU "
 "standards."
 msgstr ""
+"**Formatos compatibles**: Odoo es compatible con los formatos estándar de "
+"facturación electrónica, como archivos PDF con firmas digitales y archivos "
+"XML en formato :abbr:`UBL (Universal Business Language)`, totalmente "
+"compatibles con el :abbr:`CIS (Sistema Central de Facturas)` de Croacia para "
+"las transacciones de aprovisionamiento público y con la plataforma de e-"
+"Račun para las transacciones B2B. Además, Odoo permite la transmisión de "
+"facturas electrónicas mediante cualquier plataforma conectada a la red "
+"Peppol, ya que *Servis eRačun za državu* funciona mediante Peppol, lo que "
+"garantiza el cumplimiento de los estándares croatas y europeos."
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing/croatia.rst:47
 msgid ""
@@ -8380,6 +8448,8 @@ msgid ""
 ":doc:`Croatian fiscal localization documentation <../../../"
 "fiscal_localizations/croatia>`"
 msgstr ""
+":doc:`Documentación de la localización fiscal de Croacia <../../../"
+"fiscal_localizations/croatia>`"
 
 #: ../../content/applications/finance/accounting/customer_invoices/electronic_invoicing/croatia.rst:61
 msgid ""
@@ -13867,6 +13937,14 @@ msgid ""
 "asset models <chart-of-account/assets>`. You can use the chart of accounts "
 "directly or modify it according to your company's needs."
 msgstr ""
+"El país que seleccionas durante la creación de tu base de datos (o de una "
+"empresa adicional en tu base de datos) determina qué :doc:`paquete de "
+"localización fiscal <../../fiscal_localizations>` se instala de forma "
+"predeterminada. Este paquete agrega un plan de cuentas estándar que ya está "
+"configurado según las regulaciones del país, incluidas las cuentas de gastos "
+"que pueden estar :ref:`vinculadas a modelos de activos predeterminados "
+"<chart-of-account/assets>`. Puedes usar el plan de cuentas directamente o "
+"modificarlo según las necesidades de tu empresa."
 
 #: ../../content/applications/finance/accounting/get_started/chart_of_accounts.rst:30
 msgid ""
@@ -23940,6 +24018,15 @@ msgid ""
 "for the end-of-year result using a :ref:`Current Year Earnings type account "
 "<accounting/year-end/appropriation>`."
 msgstr ""
+"Al final de un ejercicio fiscal, una empresa casi siempre tendrá una "
+"ganancia neta o una pérdida neta calculada a partir de la suma de las "
+"cuentas de ingresos y gastos del estado de resultados. Odoo muestra el "
+"resultado del año **N** como una **línea dinámica** llamada *Resultado "
+"acumulado* en la balanza de comprobación y el libro mayor del año **N+1**. "
+"Para eliminar esta línea dinámica, crea un :ref:`asiento contable manual "
+"<accounting/year-end/manual-je>` en el año **N** para el resultado de cierre "
+"del ejercicio con una :ref:`cuenta de tipo ganancias del año en curso "
+"<accounting/year-end/appropriation>`."
 
 #: ../../content/applications/finance/accounting/reporting/year_end.rst:164
 msgid "Balancing the trial balance"
@@ -23966,6 +24053,25 @@ msgid ""
 "profit/loss is ready to be appropriated, this manual journal entry replaces "
 "the dynamic line."
 msgstr ""
+"Una balanza de comprobación siempre está equilibrada de forma predeterminada "
+"(es decir, la suma del debe equivale a la suma del haber) porque registra la "
+"suma de todos los asientos contables, que ya están balanceados. Sin embargo, "
+"las **cuentas del balance general** (activos, pasivos y patrimonio) "
+"mantienen sus saldos de ejercicios fiscales anteriores, mientras que las "
+"**cuentas de resultados** (ingresos, gastos y :ref:`cuentas de asignación "
+"<accounting/year-end/appropriation>`) se restablecen a cero al inicio de un "
+"nuevo ejercicio fiscal. Esta diferencia en el comportamiento de las cuentas "
+"dejaría la balanza de comprobación desequilibrada si no existiera la línea "
+"dinámica *Resultado acumulado*, que balancea esta diferencia de forma "
+"temporal hasta registrar un :ref:`asiento contable manual <accounting/year-"
+"end/manual-je>` para asignar la ganancia o la pérdida. Registrar un asiento "
+"en una :ref:`cuenta de ganancias del ejercicio actual <accounting/year-end/"
+"appropriation>` al cierre del ejercicio \"neutraliza\" la línea dinámica y "
+"garantiza que la balanza de comprobación quede balanceada con apuntes "
+"contables reales. No es necesario crear este asiento contable manual justo "
+"después del cierre del ejercicio fiscal porque la balanza de comprobación "
+"siempre está equilibrada, pero cuando la empresa esté lista para asignar la "
+"ganancia o pérdida, este asiento contable manual reemplaza la línea dinámica."
 
 #: ../../content/applications/finance/accounting/reporting/year_end.rst:184
 msgid "Appropriation (current year earnings) accounts"
@@ -24073,6 +24179,14 @@ msgid ""
 "that is on the dynamic :guilabel:`Result Brought Forward` line of the trial "
 "balance **for the year after the profit or loss was incurred**."
 msgstr ""
+"Agrega las líneas de asignación necesarias en la pestaña :guilabel:`Apuntes "
+"contables`. Si registras una ganancia, abona una o más cuentas de asignación "
+"(ganancias del año en curso). Si registras una pérdida, acredita una o más "
+"cuentas de asignación (ganancias del año en curso). En ambos casos, para "
+"distribuir por completo la ganancia o pérdida del ejercicio, el importe debe "
+"coincidir con el importe de la línea dinámica :guilabel:`Resultado "
+"acumulado` de la balanza de comprobación **del ejercicio posterior al que se "
+"generó la ganancia o pérdida**."
 
 #: ../../content/applications/finance/accounting/reporting/year_end.rst:223
 msgid ""
@@ -32173,6 +32287,15 @@ msgid ""
 "feedback with an integrated :ref:`refuse expense <expenses/refuse-report>` "
 "communication tool."
 msgstr ""
+"Una vez que crees y envíes los gastos, un usuario autorizado de la base de "
+"datos debe procesarlos. En Odoo, la mayoría de los usuarios no pueden "
+"procesar gastos, solo quienes cuentan con los :doc:`permisos de acceso <../"
+"../general/users/access_rights>` o necesarios pueden hacerlo. Esto significa "
+"que un usuario **debe** tener al menos permisos de *aprobador del equipo* en "
+"la aplicación **Gastos**. Los empleados con los permisos necesarios pueden "
+"revisar los gastos, aprobarlos o rechazarlos, y proporcionar comentarios con "
+"la herramienta integrada de :ref:`rechazo de gastos <expenses/refuse-report>"
+"`."
 
 #: ../../content/applications/finance/expenses/approve_expenses.rst:13
 msgid "View expenses"
@@ -32251,6 +32374,12 @@ msgid ""
 "approved, or tick the checkbox next to the :guilabel:`Employee` column title "
 "to select all the expenses in the list."
 msgstr ""
+"Para aprobar varios gastos al mismo tiempo, primero ve a "
+":menuselection:`Gastos --> Mis gastos --> Gastos por procesar` para ver una "
+"lista de todos los gastos pendientes de procesar. Después, elige los gastos "
+"que quieres aprobar al marcar la seleccionar junto a cada gasto o selecciona "
+"la casilla junto al título de la columna :guilabel:`Empleado` para "
+"seleccionar todos los gastos de la lista."
 
 #: ../../content/applications/finance/expenses/approve_expenses.rst:61
 msgid "Next, click the :guilabel:`Approve` button."
@@ -34639,6 +34768,12 @@ msgid ""
 "expenses that need to be posted, adjust the filters on the left side so only "
 "the :guilabel:`Approved` checkbox is ticked."
 msgstr ""
+"Solo los gastos en estado *Aprobado* pueden estar registradas en un diario. "
+"Para ver todos los gastos listos para su registro, ve a "
+":menuselection:`Gastos --> Mis gastos --> Gastos por procesar`. Después, "
+"para ver **solo** los gastos aprobados que necesitan estar registrados, "
+"ajusta los filtros del lado izquierdo para que solo la casilla "
+":guilabel:`Aprobado` esté seleccionada."
 
 #: ../../content/applications/finance/expenses/post_expenses.rst:20
 msgid ""
@@ -34892,6 +35027,12 @@ msgid ""
 "to :guilabel:`Posted` when the journal entry is posted, "
 "then :guilabel:`Paid` when the related payslip is processed."
 msgstr ""
+"Nada cambia en el tablero :guilabel:`Gastos por procesar`, pero en el "
+"chatter de cada gasto por separado aparece un mensaje con el texto `El gasto "
+"(\"nombre del gasto\") se agregará al siguiente recibo de nómina.` El estado "
+"de los gastos individuales no cambia, pero pasa a :guilabel:`Registrado` "
+"luego de registrar el asiento contable y después a :guilabel:`Pagado` al "
+"procesar el recibo de nómina relacionado."
 
 #: ../../content/applications/finance/expenses/reimburse.rst:94
 msgid "Reimburse expenses via cash, check, or direct deposit"
@@ -34950,6 +35091,13 @@ msgid ""
 "their employee profile, use the drop-down menu to select the desired bank "
 "account."
 msgstr ""
+":guilabel:`Cuenta bancaria receptora`: Este campo solo aparece si el campo "
+":guilabel:`Diario` está configurado con la opción :guilabel:`Banco` y el "
+"campo :guilabel:`Método de pago` está configurado con la opción "
+":guilabel:`Pago manual`. La :ref:`cuenta bancaria <employees/private-info>` "
+"del empleado completa este campo de forma predeterminada. Usa el menú "
+"desplegable para elegir la cuenta correcta si el empleado tiene más de una "
+"cuenta bancaria confiable en su perfil."
 
 #: ../../content/applications/finance/expenses/reimburse.rst:119
 msgid ""
@@ -44632,11 +44780,11 @@ msgid ""
 "4 months, semi-annually, and annually."
 msgstr ""
 ":ref:`Reporte fiscal <accounting/reporting/tax-report>`: Un formulario "
-"oficial que se presenta a una autoridad tributaria. Este reporta los "
-"ingresos, gastos y otra información fiscal pertinente. Los reportes fiscales "
-"permiten que los contribuyentes calculen los impuestos a pagar, programen "
-"los pagos correspondientes o soliciten su saldo a favor. En Odoo puede "
-"elaborar un reporte fiscal mensual, bimestral, trimestral, cuatrimestral, "
+"oficial presentado ante una autoridad tributaria. Este reporta los ingresos, "
+"gastos y otra información fiscal pertinente. Los reportes fiscales permiten "
+"que los contribuyentes calculen los impuestos a pagar, programen los pagos "
+"correspondientes o soliciten su saldo a favor. En Odoo, el reporte fiscal "
+"puede realizarse de forma mensual, bimestral, trimestral, cuatrimestral, "
 "semestral y anual."
 
 #: ../../content/applications/finance/fiscal_localizations/canada.rst:251
@@ -53912,6 +54060,14 @@ msgid ""
 "both standard tax forms and those customized for the company’s tax "
 "declaration."
 msgstr ""
+"Haz clic en :guilabel:`Sauvegarder` (Guardar) para mostrar el siguiente paso "
+":guilabel:`Informations générales sur l'exercice déclaré` (Información "
+"general sobre el ejercicio declarado). Después, completa la información del "
+"ejercicio fiscal, como las fechas de inicio y cierre del ejercicio o la "
+"fecha de cierre y duración del periodo fiscal anterior. Después de guardar, "
+"aparecerá la lista de documentos incluidos en la *liasse fiscale*, incluidos "
+"los formularios fiscales estándar y los personalizados para la declaración "
+"fiscal de la empresa."
 
 #: ../../content/applications/finance/fiscal_localizations/france.rst:550
 msgid ""
@@ -70099,7 +70255,7 @@ msgstr "Códigos de detracción en las facturas."
 
 #: ../../content/applications/finance/fiscal_localizations/peru.rst:612
 msgid "Credit Notes"
-msgstr "Facturas rectificativas"
+msgstr "Notas de crédito"
 
 #: ../../content/applications/finance/fiscal_localizations/peru.rst:614
 msgid ""
@@ -78567,6 +78723,14 @@ msgid ""
 "should be set to `United States`. This package includes the necessary "
 "settings for the US localization for the Odoo **Accounting** app."
 msgstr ""
+"El módulo principal para la localización fiscal de Estados Unidos está "
+"incluido en el paquete predeterminado instalado durante la inicialización de "
+"la base de datos. Verifica que el paquete de Estados Unidos esté en uso "
+"desde :menuselection:`Contabilidad --> Ajustes`. En la sección "
+":guilabel:`Localización fiscal`, el campo :guilabel:`Paquete` debe tener la "
+"opción `Estados Unidos` configurada. Este paquete incluye los ajustes "
+"necesarios para la localización estadounidense de la aplicación "
+"**Contabilidad** de Odoo."
 
 #: ../../content/applications/finance/fiscal_localizations/united_states.rst:None
 msgid "The Package field with the United States package selected."
@@ -79003,6 +79167,13 @@ msgid ""
 "Odoo, the tax report can be made monthly, every two months, quarterly, every "
 "4 months, semi-annually, and annually."
 msgstr ""
+":ref:`Reporte fiscal <accounting/reporting/tax-report>`: Un formulario "
+"oficial presentado ante una autoridad tributaria. Este reporta los ingresos, "
+"gastos y otra información fiscal pertinente. Los reportes fiscales permiten "
+"que los contribuyentes calculen los impuestos a pagar, programen los pagos "
+"correspondientes o soliciten su saldo a favor. En Odoo, el reporte fiscal "
+"puede realizarse de forma mensual, bimestral, trimestral, cuatrimestral, "
+"semestral y anual."
 
 #: ../../content/applications/finance/fiscal_localizations/united_states.rst:284
 msgid ""
