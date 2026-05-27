@@ -201,23 +201,23 @@ the :guilabel:`Colombian Electronic Invoicing` section, and complete the followi
 #. Enable the :guilabel:`Test Environment` checkbox.
 #. Enable the :guilabel:`Activate Certification Process` checkbox.
 #. Enter the number of documents requested by the |DIAN| for each type of document
-#. Click :guilabel:`Begin Certification Process`.
+#. Click :guilabel:`Begin Certification Process`, then :guilabel:`Save`.
 
 .. note::
    The exact number of documents required by the |DIAN| is shown in the portal when you register
    the operation mode.
 
-Odoo will automatically generate the necessary journals, products, and the required documents, which are
-submitted to the |DIAN|'s certification environment.
+The necessary journals, products, and required documents are automatically generated and submitted
+to the |DIAN|'s certification environment.
 
 When the process is complete, click :guilabel:`Open` to review the generated documents and check
 each document's validation status under its :guilabel:`DIAN` tab.
 
 .. important::
-   Confirm that the company status has changed to :guilable:`Enabled` in the |DIAN| portal before
+   Confirm that the company status has changed to :guilabel:`Enabled` in the |DIAN| portal before
    proceeding to production.
-   - If the status is :guilable:`Enabled`, the process has been completed successfully.
-   - If the company is not :guilable:`Enabled`, repeat the process until it is successfully enabled.
+   - If the status is :guilabel:`Enabled`, the process has been completed successfully.
+   - If the company is not :guilabel:`Enabled`, repeat the process until it is successfully enabled.
 
 .. seealso::
    - Watch this `video <https://www.youtube.com/watch?v=_0j9kqL9yOU>`_ for a demonstration of the
