@@ -1,5 +1,3 @@
-:hide-page-toc:
-
 ===============
 Troubleshooting
 ===============
@@ -102,37 +100,14 @@ generation or reception of the ref:`HTTPS certificate <iot/connect/https_certifi
    attempts to generate one if it is missing. If an error appears, refresh the page to see if the
    issue is resolved.
 
-`ERR_IOT_HTTPS_CHECK_NO_SERVER`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The server configuration is missing, i.e., the database is not :doc:`connected <../connect>` to
-the IoT system.
-
-`ERR_IOT_HTTPS_CHECK_CERT_READ_EXCEPTION`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-An error occurred while attempting to read the existing ref:`HTTPS certificate
-<iot/connect/https_certificate>`.
-Verify that the HTTPS certificate file is readable.
-
-`ERR_IOT_HTTPS_LOAD_NO_CREDENTIAL`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Missing credentials
+~~~~~~~~~~~~~~~~~~~
 
 The contract and/or database :abbr:`UUID (Universal Unique Identifier)` is missing from the IoT.
 
 Verify that both values are correctly configured. To update them, :ref:`access the IoT box's
 <iot/iot-box/homepage>` or :ref:`Windows virtual IoT's homepage <iot/windows-iot/homepage>`,
 click the :icon:`fa-cogs` (:guilabel:`cogs`) button, then click :guilabel:`Credentials`.
-
-`ERR_IOT_HTTPS_LOAD_REQUEST_EXCEPTION`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-An unexpected error occurred while the IoT system tried to reach `<https://www.odoo.com>`_. This is
-likely due to network-related issues, such as:
-
-- The IoT system does not have Internet access.
-- Network restrictions (e.g., firewalls or VPNs) are preventing communication with
-  https://www.odoo.com.
 
 .. note::
    - To access the full request exception details with information regarding the error, :ref:`enable
@@ -145,14 +120,11 @@ likely due to network-related issues, such as:
    - To address network-related issues, contact your system or network administrator; these issues
      are beyond the scope of Odoo support services.
 
-`ERR_IOT_HTTPS_LOAD_REQUEST_STATUS`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Odoo.com not reachable
+~~~~~~~~~~~~~~~~~~~~~~
 
 The IoT system successfully reached `<https://www.odoo.com>`_ but received an unexpected
 `HTTP response (status codes) <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>`_.
-
-This error code includes the HTTP status. For example, `ERR_IOT_HTTPS_LOAD_REQUEST_STATUS 404` means
-the server returned a "Page Not Found" response.
 
 To solve this issue:
 
@@ -162,11 +134,45 @@ To solve this issue:
    | If the website is operational, open a `support ticket <https://www.odoo.com/help>`_ and make
      sure to include the 3-digit HTTPS status code in the ticket.
 
-`ERR_IOT_HTTPS_LOAD_REQUEST_NO_RESULT`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Still no certificate?
+~~~~~~~~~~~~~~~~~~~~~
 
-The IoT system successfully connected to `<https://www.odoo.com>`_, but the server refused to
+If the IoT system successfully connected to `<https://www.odoo.com>`_, but the server refused to
 provide the ref:`HTTPS certificate <iot/connect/https_certificate>`.
 
 Check that the IoT system and database meet the :ref:`eligibility requirements
 <iot/https_certificate_iot/iot-eligibility>` for an HTTPS certificate.
+
+Grant Odoo support team access to an IoT Box
+============================================
+
+If you need to grant remote access to an IoT Box, you can provide a Tailscale token
+on the IoT Box's homepage. This allows the Odoo support team to securely access the
+IoT Box for troubleshooting purposes.
+
+.. warning::
+    Only enter a token from a trusted source, such as an official Odoo support representative.
+    Providing a token will grant access to the IoT Box, but also to your whole local network,
+    so it should be done with caution.
+
+On the :ref:`IoT Box's homepage <iot/iot-box/homepage>`, click the :icon:`fa-cogs`
+(:guilabel:`cogs`) button, then click :guilabel:`Debugging Tools`. In the pop-up window,
+enter the Tailscale token provided by the Odoo support team and click :guilabel:`Enable`.
+
+.. note::
+   **Remote Debug** is only available for :doc:`IoT boxes <../iot_box>`, not the :doc:`Windows
+   virtual IoT <../windows_iot>`.
+
+IoT Box is down?
+----------------
+
+No worries, if your IoT Box is down, you can still enable remote access for the Odoo support team.
+Just provide the key in the only field and click :guilabel:`Enable`.
+
+.. image:: troubleshooting/iot-down.png
+  :alt: The Remote Debugging password generation window.
+
+.. note::
+    Enabling remote access on a down IoT Box is only available from version above v26.01.2026.
+    If your IoT Box doesn't have this option, you will need to :ref:`flash the IoT Box's card with
+    the latest image <iot/updating_iot/image-code>`.
